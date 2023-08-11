@@ -1,7 +1,7 @@
-import {ViteOptions} from "./types";
-export const config = <%= globalData %>
-export const active = '<%= globalActive %>'
-export const defaultConfig:Partial<ViteOptions> = {
+<%= importStr %>
+export const config<%= key %> = <%= globalData %>
+export const active<%= key %> = '<%= globalActive %>'
+export const defaultConfig<%= key %>:Partial<ViteOptions> = {
     globalName:'<%= globalName %>',
     configTypeName:'<%= configTypeName %>',
 }

@@ -1,21 +1,11 @@
-import {config, active} from "./data";
+<%= importStr %>
 
-export type ViteOptions  = {
-    globalName:string
-    globalActive:string
-    globalData:Record<string, any>
-    configTypeName:string
-}
+<%= ViteOptions %>
 
-type GlobalVariableType = typeof config[typeof active] & {
-    <%= configTypeName %>:typeof active
+type GlobalVariableType<%= key %> = typeof config<%= key %>[typeof active<%= key %>] & {
+    <%= configTypeName %>:typeof active<%= key %>
 }
 
-declare module 'vue' {
-    export interface ComponentCustomProperties {
-        <%= globalName %>:GlobalVariableType
-    }
-}
-declare global {
-    const <%= globalName %>:GlobalVariableType
-}
+<%= declareModuleVue %>
+
+<%= declareGlobal  %>

@@ -7,6 +7,7 @@ export type ViteOptions  = {
 }
 type GlobalVariableType0 = typeof config0[typeof active0] & {
     $type:typeof active0
+    value?:any
 }
 declare module 'vue' {
     export interface ComponentCustomProperties {
